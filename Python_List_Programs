@@ -1,0 +1,617 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNewwqTY2Pt6Q8wYSMvpOkv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sureshdev9/Python-List-Programs/blob/main/Python_List_Programs\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kRc8OVp48Opn",
+        "outputId": "a3867ff6-5818-411b-8734-62fd2086f2a0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Find sum and average of List in Python\n",
+        "\n",
+        "lst  = [1,2,3,4,5]\n",
+        "# total_sum_of_list = sum(lst)\n",
+        "# avg = total_sum_of_list/len(lst)\n",
+        "# print(avg)\n",
+        "\n",
+        "total_sum  = 0\n",
+        "count= 0\n",
+        "for i in lst:\n",
+        "  total_sum += i\n",
+        "  count += 1\n",
+        "print(total_sum/count)\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Sum of number digits in List in Python\n",
+        "\n",
+        "lst = [123,45,678]\n",
+        "l = []\n",
+        "for i in lst:\n",
+        "  sum1=0\n",
+        "  for j in str(i):\n",
+        "    sum1 += int(j)\n",
+        "  l.append(sum1)\n",
+        "print(l)\n",
+        "\n",
+        "\n",
+        "\n",
+        "#sum2   = [sum(int(digit) for digit in str(val)) for val in lst]\n",
+        "#print(sum2)\n",
+        "\n",
+        "#def digit_sum(val):\n",
+        "    #return sum(int(digit) for digit in str(val))\n",
+        "\n",
+        "a = [123, 456, 789]\n",
+        "\n",
+        "# Using map to apply the digit_sum function to each number\n",
+        "#res = list(map(digit_sum, a))\n",
+        "#print(res)\n",
+        "\n",
+        "\n",
+        "def func(val):\n",
+        "  total = 0\n",
+        "  while val >0:\n",
+        "    total += val%10\n",
+        "    val = val//10\n",
+        "  return total\n",
+        "\n",
+        "total_sum  = [func(i) for i in lst]\n",
+        "print(total_sum)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GBLipFVR9CGL",
+        "outputId": "a83a7354-378a-4549-c3d7-e5bb69bf557b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[6, 9, 21]\n",
+            "[6, 9, 21]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from functools import reduce\n",
+        "from operator import mul\n",
+        "# Multiply All Numbers in the List in Python\n",
+        "\n",
+        "lst  =[2,4,6,8]\n",
+        "mul1=1\n",
+        "for i in lst:\n",
+        "  mul1 *= i\n",
+        "  print(mul1)\n",
+        "print(mul1)\n",
+        "\n",
+        "\n",
+        "\n",
+        "resp = reduce(lambda x,y:x*y,lst)\n",
+        "print(resp)\n",
+        "resp = reduce(mul,lst)\n",
+        "print(resp)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WLC5wo5rPLKg",
+        "outputId": "828ce26b-7f88-4aa7-95a8-85ff5830474f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "8\n",
+            "48\n",
+            "384\n",
+            "384\n",
+            "384\n",
+            "384\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to find smallest number in a list\n",
+        "\n",
+        "lst  = [6,3,2,8,4,1]\n",
+        "print(min(lst))\n",
+        "\n",
+        "small = lst[0]\n",
+        "for i in lst:\n",
+        "  if i < small:\n",
+        "    small=i\n",
+        "print(small)\n",
+        "\n",
+        "\n",
+        "lst.sort()\n",
+        "print(lst[0])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mLkryaL4SFt2",
+        "outputId": "4b0ff542-6760-4dd9-93fc-8998a0e16bb0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "1\n",
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Python Program to Find Largest Number in a List\n",
+        "\n",
+        "lst = [10,20,5,7,2,9]\n",
+        "print(max(lst))\n",
+        "\n",
+        "large = lst[0]\n",
+        "for i in lst:\n",
+        "  if i > large:\n",
+        "    large = i\n",
+        "print(large)\n",
+        "\n",
+        "lst.sort()\n",
+        "print(lst[-1])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZxMnmb5_Vdy1",
+        "outputId": "af6fe0ac-16bd-48fd-813a-5483788959f4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "20\n",
+            "20\n",
+            "20\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python Program to Find Largest& Smallest Number in a List\n",
+        "\n",
+        "\n",
+        "lst = [10,20,5,7,2,0]\n",
+        "print(min(lst),max(lst))\n",
+        "\n",
+        "large = lst[0]\n",
+        "small = lst[0]\n",
+        "for i in lst:\n",
+        "  if i > large:\n",
+        "    large = i\n",
+        "  if i < small:\n",
+        "    small = i\n",
+        "print(small,large)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jNf8x6sCeB1e",
+        "outputId": "6644d459-a100-4d88-80ea-7d35300173c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 20\n",
+            "0 20\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to find second largest number in a list\n",
+        "\n",
+        "lst  = [6,3,2,8,4,1]\n",
+        "lst.sort()\n",
+        "print(lst[-2])\n",
+        "\n",
+        "lst = [10,30,50,60,10]\n",
+        "lst.sort(reverse=True)\n",
+        "print(lst[1])\n",
+        "\n",
+        "lst = [10,30,50,60,10]\n",
+        "\n",
+        "for i in range(len(lst)):\n",
+        "  for j in range(i+1,len(lst)):\n",
+        "    if lst[i] < lst[j]:\n",
+        "      lst[i],lst[j] = lst[j],lst[i]\n",
+        "print(lst[1])\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Yjm1TAfie-zo",
+        "outputId": "929ddfd4-1b33-4df5-f5a7-d27c51706889"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6\n",
+            "50\n",
+            "50\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to print even numbers in a list\n",
+        "\n",
+        "lst = [10,30,50,60,9]\n",
+        "for i in lst:\n",
+        "  if i%2==0:\n",
+        "    print(i)\n",
+        "\n",
+        "lst = [ i  for i in lst if i%2==0]\n",
+        "print(lst)\n",
+        "lst = list(filter(lambda x:x%2==0,lst))\n",
+        "print(lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VGzjE2GBtQxF",
+        "outputId": "617f15a1-06f6-4c63-d55a-527cba27bfb3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "30\n",
+            "50\n",
+            "60\n",
+            "[10, 30, 50, 60]\n",
+            "[10, 30, 50, 60]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to print odd numbers in a List\n",
+        "\n",
+        "lst = [10,30,50,60,9]\n",
+        "for i in lst:\n",
+        "  if i%2!=0:\n",
+        "    print(i)\n",
+        "\n",
+        "lst = [ i  for i in lst if i%2!=0]\n",
+        "print(lst)\n",
+        "\n",
+        "lst = list(filter(lambda x:x%2!=0,lst))\n",
+        "print(lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C45cWn_TtzDT",
+        "outputId": "2cf59956-653f-403e-94d9-28ee446b8e14"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "9\n",
+            "[9]\n",
+            "[9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python Program to Count Even and Odd Numbers in a List\n",
+        "from collections import Counter\n",
+        "lst = [2.6,10,15,8,60,19,17]\n",
+        "even =0\n",
+        "odd = 0\n",
+        "for i in lst:\n",
+        "  if i%2==0:\n",
+        "    even+=1\n",
+        "  else:\n",
+        "    odd+=1\n",
+        "print(even,odd)\n",
+        "\n",
+        "# even = len(list(filter(lambda x:x%2==0,lst)))\n",
+        "# odd = len(list(filter(lambda x:x%2!=0,lst)))\n",
+        "# print(even,odd)\n",
+        "\n",
+        "# count = Counter(list(map(lambda x:x%2==0,lst)))\n",
+        "# print(count)\n",
+        "# print(count[True],count[False])\n",
+        "even = len(list(filter(lambda x : x%2 ==0,lst)))\n",
+        "odd = len(list(filter(lambda x:x %2!=0,lst)))\n",
+        "print(even,odd)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qHMsdS3Ou5gs",
+        "outputId": "aa8b3f10-98f9-4999-e7f2-a9a846b2f2e8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3 4\n",
+            "3 4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to print positive numbers in a list\n",
+        "a = [-10, 15, 0, 20, -5, 30, -2]\n",
+        "lst =[]\n",
+        "for i in  a:\n",
+        "  if i>0:\n",
+        "    lst.append(i)\n",
+        "print(lst)\n",
+        "\n",
+        "a = [ i for i in a if i >0]\n",
+        "print(a)\n",
+        "a= list(filter(lambda x: x>0,lst))\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FVQqj5Gh0fMj",
+        "outputId": "a2c8e9df-5d5c-4e81-dae9-af79ed4439ac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[15, 20, 30]\n",
+            "[15, 20, 30]\n",
+            "[15, 20, 30]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python program to count positive and negative numbers in a list\n",
+        "\n",
+        "a = [10, -20, 30, -40, 50, -60, 0]\n",
+        "\n",
+        "p =0\n",
+        "n =0\n",
+        "\n",
+        "for i in a:\n",
+        "  if i>0:\n",
+        "    p+=1\n",
+        "  elif i<0:\n",
+        "    n+=1\n",
+        "\n",
+        "print(p,n)\n",
+        "\n",
+        "p = len(list(filter(lambda x : x>0,a)))\n",
+        "n = len(list(filter(lambda x : x<0,a)))\n",
+        "print(p,n)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NEFye3A32FfZ",
+        "outputId": "a9462d04-38c3-45ee-b7a3-bce90277e76d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3 3\n",
+            "3 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Remove Multiple Elements from List in Python\n",
+        "\n",
+        "a = [10, 20, 30, 40, 50, 60, 70]\n",
+        "\n",
+        "# Elements to remove\n",
+        "target = [20, 40, 60]\n",
+        "\n",
+        "for i in a:\n",
+        "  if i  in target:\n",
+        "    (a.remove(i))\n",
+        "print(a)\n",
+        "\n",
+        "a = [ i for i in a if i not in target]\n",
+        "print(a)\n",
+        "\n",
+        "\n",
+        "for i in a:\n",
+        "  if i in target:\n",
+        "    print(i)\n",
+        "a = list(filter(lambda x :x not in target,a))\n",
+        "print(a)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hz2ECAZ34Vp8",
+        "outputId": "9b46b777-3049-407e-bd6d-e39448fc5ebc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 30, 50, 70]\n",
+            "[10, 30, 50, 70]\n",
+            "[10, 30, 50, 70]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QkM_tPSWHuip",
+        "outputId": "92c2bca6-9af6-464c-e342-3944ef1d2f6f"
+      },
+      "execution_count": 94,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/drive\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%cd /content/drive/MyDrive/Python-List-Programs\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B-tL8y65IeD8",
+        "outputId": "ffbe7f1b-5aca-4118-87f3-6b87a31bd74a"
+      },
+      "execution_count": 96,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Errno 20] Not a directory: '/content/drive/MyDrive/Python-List-Programs'\n",
+            "/content\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
